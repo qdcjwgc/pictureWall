@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老梁语音相册</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="htmleaf-container">
+    <div class="wrapper">
+        <div class="container">
+            <h1>语音相册</h1>
+            <form class="form">
+                <input type="text" id="username" placeholder="用户名">
+                <input type="password" id="password" placeholder="密码">
+                <button id="login-button">登陆</button>
+                <button id="zuche">还没账号？注册个吧</button>
+            </form>
+        </div>
+    </div>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#login-button").click(function(){
+            if($("#username").val()==""||$("#password").val()==""){
+                alert("请填写完整信息哦");
+                return;
+            }
+            $.post("dologin.js",{
+                Username:$("#username").val(),
+                Password:$("#password").val(),
+                Event:"Submit"
+            })
+        })
+    })
+</script>
+</body>
+</html>
